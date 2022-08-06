@@ -22,3 +22,16 @@ umur = "30" (error)
 
 ### Type Data Boolean
 Senada dengan string dan number, tipe data boolean hany bisa kita beri/ganti dengan tipe data boolean.
+
+### Type Data Any
+Jika kita ingin menyimpan data dan ada kebutuhan mengganti / menimpa data di kemudian hari dengan tipe data yang berbeda beda, maka solusi yang bisa kita pakai adalah membuat variabel dangan tipe data any.
+Dengan tipe data any ini maka kita bisa memberikan nilai / value apa saja.
+```
+let identity: any = "Irwanto"
+identity = {
+    "nama": "Irwanto Wibowo",
+    "umur": 30,
+    "alamat": "Gunungkidul"
+}
+```
+Dengan menggunakan tipe data any, kita bisa memasukkan data apa saja di variabel yang kita buat.

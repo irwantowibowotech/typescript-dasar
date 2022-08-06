@@ -11,3 +11,11 @@ console.log(nomor);
 let isMarriage = true;
 isMarriage = false;
 console.log(isMarriage);
+// Tipe data any
+let identity = "Irwanto";
+identity = {
+    "nama": "Irwanto Wibowo",
+    "umur": 30,
+    "alamat": "Gunungkidul"
+};
+console.log(identity);
