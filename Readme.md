@@ -12,3 +12,13 @@ Sedikit tambahan, ketika kita mendefinisakan sebuah variabel yang langsung kita 
 let nama = "Rina Pratama"
 ```
 Secara otomatis typescript akan menganggap kalau variabel nama memiliki tipe data string, sehingga saat kita menimpanya dengan tipe data selain string maka akan terjadi error.
+
+### Type Data Number
+Tidak jauh berbeda dengan tipe data number, tipe data number hanya bisa kita ganti dengan tipe data number. Jika kita paksa dengan tipe data selain number maka akan terjadi error.
+```
+let umur: number = 20;
+umur = "30" (error)
+```
+
+### Type Data Boolean
+Senada dengan string dan number, tipe data boolean hany bisa kita beri/ganti dengan tipe data boolean.
