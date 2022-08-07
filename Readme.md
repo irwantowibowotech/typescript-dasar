@@ -35,3 +35,17 @@ identity = {
 }
 ```
 Dengan menggunakan tipe data any, kita bisa memasukkan data apa saja di variabel yang kita buat.
+
+### Type Data Array
+Array adalah kumpulan darai beberapa data. Array di sini juga sama dengan tipe data lainnya, ketika kita sudah membuat array dengan tipe data tertentu maka 
+kita tidak bisa meggantinya dengan tipe data lain.
+```
+let array: number[] = [1,2,3,4,5] // membuat array dengan tipe number
+
+array = ["satu", "dua"] // error, karena array bertipe string
+```
+Lalu bagaimana jika kita ingin membuat array dengan tipe data yang berbeda beda? solusinya adalah gunakan array dengan tipe `any`.
+```
+let array2: any[];
+array2 = [1, "Dua", true, null, undefined];
+```
