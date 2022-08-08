@@ -99,3 +99,21 @@ enum Days {
 
 console.log(Days.MON); // senin
 ```
+
+## Function
+### Type Data Balikan Pada Function
+Di Typescript, kita harus mendefinisikan tipe data kembalian dari function yang kita buat. Misal kita buat kembaliannya bertipe string, maka ketika kita return dengan tipe number akan menjadikan error di function kita.
+```
+function getName(): string {
+    return "Hello, nama saya Irwanto";
+}
+console.log(getAge());
+```
+Jika kita tidak mengembalikan apa apa pada function kita maka kita bisa return-kan ```void``` pada function kita.
+```
+function printName(): void {
+    console.log("Print name");
+}
+
+printName();
+```
