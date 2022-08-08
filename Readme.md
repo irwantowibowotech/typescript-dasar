@@ -62,3 +62,40 @@ biodata = ["Surabaya", 123]; // benar
 biodata = ["Surabaya", "Malang"]; // salah
 biodata = [123, "Surabaya"]; // salah
 ```
+
+### Enum
+Adalah sebuah tipe data yang menyimpan sekumpulan data konstan. Hal ini sama seperti kita `.env` yang menyimpan data data konfigurasi kita (contohnya).
+```
+enum Month {
+    JAN, FEB, MAR, APR, MAY
+}
+```
+Ketika kita membuat enum seperti di atas, maka dia akan diberi index, Sehingga kita bisa akses indexnya maupun sebaliknya kita munculkan indexnya dengan mengakses data Month-nya.
+```
+console.log(Month); // akan muncul data month beserta index-nya
+console.log(Month.FEB); // akan muncul 1
+console.log(Month[0]); // akan muncul JAN
+```
+Default dari index pertama ini adalah 0. Jika kita ingin memulainya dari 1 (bukan dari 0) maka kita bisa definisikan index pertamanya 1 di awal data.
+```
+enum Month {
+    JAN = 1, FEB, MAR, APR, MAY
+}
+
+console.log(Month); // akan muncul data month beserta index-nya
+console.log(Month.FEB); // akan muncul 1
+console.log(Month[1]); // akan muncul JAN
+```
+
+Selain itu kita bisa juga memberikan enum dengan index string. Hanya saja saat membuat index dengan string maka kita wajib mengisi index-nya (semuanya).
+Hal ini karena index dari data selanjutnya dari enum adalah increment dari data sebelumnya, sehingga jika kita membuat index-nya berupa string dan tidak menambahkannya di data selanjutnya maka akan terjadi error.
+```
+enum Days {
+    SUN = "Minggu",
+    MON = "Senin",
+    TUE = "Selasa",
+    WED = "Rabu"
+}
+
+console.log(Days.MON); // senin
+```
