@@ -1,4 +1,5 @@
 // tipe data balikan pada function
+/*
 function getName(): string {
     return "Hello, nama saya Irwanto";
 }
@@ -16,3 +17,10 @@ function printName(): void {
 }
 
 printName();
+*/
+
+function tambah(angka1:number, angka2:number): number {
+    return angka1 + angka2;
+}
+
+console.log(tambah(40, 20));
