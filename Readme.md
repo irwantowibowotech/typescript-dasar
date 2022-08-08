@@ -117,3 +117,22 @@ function printName(): void {
 
 printName();
 ```
+
+### Type Data Pada Parameter
+Di Javascript biasa ketika kita membuat function (misal pertambahan) dan kita buat parameter kemudian kita return penambahannya, sebenarnya ini akan rentan dengan kesalahan.
+```
+function tambah(angka1, angka2) {
+    return angka1 + angka2;
+}
+```
+Sekilas tampak biasa saja, namun ketika kita panggil functionnya dan kita beri parameter "10" dan 40 maka apa yang terjadi? 
+tidak akan menyebabkan error, namun yang keluar adalah 1040. Hal ini bisa terjadi karena secara otomatis parametr yang kita masukkan terkonversi menjadi string. <br />
+Dengan Typescript kita bisa menghindari hal tersebut dengan memberikan tipe data yang benar di parameternya.
+```
+function tambah(angka1:number, angka2:number): number {
+    return angka1 + angka2;
+}
+
+console.log(tambah(40, 20));
+```
+Dengan menambahkan tipe data pada parameter-nya ketika ada pemanggilan function dan parametrnya tidak sesuai maka akan terjadi error.

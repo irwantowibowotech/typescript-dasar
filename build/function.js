@@ -1,14 +1,25 @@
 "use strict";
 // tipe data balikan pada function
-function getName() {
+/*
+function getName(): string {
     return "Hello, nama saya Irwanto";
 }
+
 console.log(getName());
-function getAge() {
+
+function getAge(): number {
     return 30;
 }
+
 console.log(getAge());
-function printName() {
+
+function printName(): void {
     console.log("Print name");
 }
+
 printName();
+*/
+function tambah(angka1, angka2) {
+    return angka1 + angka2;
+}
+console.log(tambah(40, 20));
