@@ -49,3 +49,16 @@ Lalu bagaimana jika kita ingin membuat array dengan tipe data yang berbeda beda?
 let array2: any[];
 array2 = [1, "Dua", true, null, undefined];
 ```
+
+### Array Tuple
+Tuple adalah array yang bisa berisi berbagai macam tipe data namun nilai / item-ny terbatas.
+```
+let biodata: [string, number];
+```
+Kode di atas memberitahu kita jika variabel biodata hanya bisa diisi dengan tipe data string di posisi pertama dan number di posisi kedua.
+Hal ini akan error jika kita mengisi string di posisi pertama dan string di posisi kedua karena memang berbeda tipe datanya.
+```
+biodata = ["Surabaya", 123]; // benar
+biodata = ["Surabaya", "Malang"]; // salah
+biodata = [123, "Surabaya"]; // salah
+```
