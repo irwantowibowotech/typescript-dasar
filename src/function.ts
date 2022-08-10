@@ -24,3 +24,9 @@ function tambah(angka1:number, angka2:number): number {
 }
 
 console.log(tambah(40, 20));
+
+// Function sebagai tipe data
+type Tambah = (val1: number, val2: number) => number;
+const Add: Tambah = (val1: number, val2: number): number => {
+    return val1 + val2;
+}

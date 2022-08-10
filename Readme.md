@@ -136,3 +136,25 @@ function tambah(angka1:number, angka2:number): number {
 console.log(tambah(40, 20));
 ```
 Dengan menambahkan tipe data pada parameter-nya ketika ada pemanggilan function dan parametrnya tidak sesuai maka akan terjadi error.
+
+### Function Sebagai Tipe Data
+Sebelum kita ke pembahasa function sebagai tipe data, mari kita belajar tentang membuat sebuah variabel yang bisa kita pakai untuk tipe data. Gimana maksudnya? <br />
+Misal kita mempuanya sebuah tipe data `Age` dengan tipe data number.
+```
+type Age: number
+```
+Kemudian kita membuat sebuah variabel yang tipe datanya mereferensikan ke `Age`, sebenarnya ujung - ujungnya variabel tersebut bertipe number, hanya saja sudah kita aliaskan sebaga `Age`.
+```
+type Age: number
+let umur: Age
+```
+Berdasarkan pemahaman di atas maka sebenarnya kita bisa menjadikan function menjadi tipe data, sama seperti kasus di atas.
+```
+type Tambah = (val1: number, val2: number) => number;
+const Add: Tambah = (val1: number, val2: number): number => {
+    return val1 + val2;
+}
+```
+Pada code di atas, kita membuat sebuah tipe data dengan nama `Tambah` yang mana adalah sebuah funtion dan memiliki dua parameter `val1` dan `val2` serta return bertipa numbar.
+Artinya adalah saat kita membuat variabel dengan tipe data `Tambah` maka wajib memberikan parameter bertipe number serta harus mereturn kembalian bertipa number juga. Jika kita memaksa 
+untuk memberikan tipe data lain maka akan menjadikan error.
