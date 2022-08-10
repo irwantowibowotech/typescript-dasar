@@ -158,3 +158,37 @@ const Add: Tambah = (val1: number, val2: number): number => {
 Pada code di atas, kita membuat sebuah tipe data dengan nama `Tambah` yang mana adalah sebuah funtion dan memiliki dua parameter `val1` dan `val2` serta return bertipa numbar.
 Artinya adalah saat kita membuat variabel dengan tipe data `Tambah` maka wajib memberikan parameter bertipe number serta harus mereturn kembalian bertipa number juga. Jika kita memaksa 
 untuk memberikan tipe data lain maka akan menjadikan error.
+
+### Type Data Object
+Di typescript, object akan diaggap sebagai tipe data juga. Misal seperti ini,
+```
+let user = {
+    name: "Irwanto",
+    age: 30
+}
+```
+Kemudian kita ingin menambahkan alamat di object user, maka hal itu tidak dibolehkan karena dianggap tidak sesuai dengan tipe data object-nya,
+yang mana dia memiliki `name` dan `age`. Bahkan ketika kita hanya memasukkan salah satu saja (name saja misalnya) maka akan dianggap error juga karena dia membutuhkan `name` dan `age`.
+```
+type User = {
+    name: string,
+    age: number,
+}
+
+let user = {
+    name: "Irwanto",
+    age: 30,
+}
+
+user = {
+    alamat: "Gunungkidul", // error
+}
+```
+
+### Type Data Union
+Tipe data ini adalah gabungan dari beberapa tipe data. Misal kita memiliki nomor telepon, kita bisa mengisi variabel nomot telepon tersebut dengan tipe number ataupun string.
+```
+let phone: string | number;
+phone = 6287838456789;
+phone = "087838745632";
+```
