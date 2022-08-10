@@ -22,3 +22,8 @@ identity = {
     "alamat": "Gunungkidul"
 }
 console.log(identity);
+
+// Tipe data union
+let phone: string | number;
+phone = 6287838456789;
+phone = "087838745632";
