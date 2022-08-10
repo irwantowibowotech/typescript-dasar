@@ -30,3 +30,11 @@ type Tambah = (val1: number, val2: number) => number;
 const Add: Tambah = (val1: number, val2: number): number => {
     return val1 + val2;
 }
+
+// Default parameter
+const getNama = (firstName: string, lastName: string = "Wibowo"): string => {
+    return firstName + " " + lastName;
+}
+
+console.log(getNama("Irwanto")); // Irwanto Wibowo
+console.log(getNama("Irwanto", "Mantabb")); // Irwanto Mantabb

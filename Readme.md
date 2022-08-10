@@ -192,3 +192,14 @@ let phone: string | number;
 phone = 6287838456789;
 phone = "087838745632";
 ```
+
+### Default Parameter di Typescript
+Kita bisa membuat default parameter saat kita membuat sebuah function, nantinya ketika kita tidak menyertakan parameter maka default parameter inilah yang akan dipakai.
+```
+const getNama = (firstName: string, lastName: string = "Wibowo"): string => {
+    return firstName + " " + lastName;
+}
+
+console.log(getNama("Irwanto")); // Irwanto Wibowo
+console.log(getNama("Irwanto", "Mantabb")); // Irwanto Mantabb
+```
