@@ -32,3 +32,9 @@ const getNama = (firstName, lastName = "Wibowo") => {
 };
 console.log(getNama("Irwanto")); // Irwanto Wibowo
 console.log(getNama("Irwanto", "Mantabb")); // Irwanto Mantabb
+// Optional parameter
+const getUser = (val1, val2) => {
+    return val1 + " " + val2;
+};
+console.log(getUser("A", "B")); // A B
+console.log(getUser("A")); // A undefined
