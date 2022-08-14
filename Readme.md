@@ -395,3 +395,23 @@ let people = People.isAlien;
 console.log(people); // false
 console.log(People.getHello()); // Hello people class!!
 ```
+
+### Memahami Abstract Class
+Abstract class adalah class yang tidak bisa langsunng diinstansiasi (dibuat object-nya), dia hanya bisa di-extends saja.
+Biasanya abstract class dipakai untuk menampung property yang belum pasti nilainya. Misal saja motor dan mobil yang memiliki jumlah 
+roda yang berbeda. Di abstract class cukup kita berikan property roda tanpa harus kita sebutkan berapa jumlahnya karena tentu jumlah 
+roda mobil dan motor berbeda.
+```
+abstract class Vehicle {
+    abstract wheels: number;
+    start(): void {
+        console.log("bruuummmmm");
+    }
+}
+```
+
+```
+class Car extends Vehicle {
+    wheels: number = 4;
+}
+```
