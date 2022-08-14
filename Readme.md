@@ -337,10 +337,10 @@ Ketika class Admin meng-extends class User maka class Admin bisa memiliki method
 dan bisa kita gunukan di class User.
 
 ### Super Constructor
-Ketika kita membuat sebuah class dan tentu kita akan membuat sebuah constructor yang akan kita panggil saat kita membuat object-nya.
+Ketika kita membuat sebuah class tentu kita akan membuat sebuah constructor yang akan kita panggil saat kita membuat object-nya.
 Namun saat kita melakukan extends dan kita ingin membuat constructor di class child, maka kita harus membuat super constructor.
-Super constructor ini digunakan untuk memanggil constructor yang ada pada parent class. Bisa saya andaikan kalau `super()` ini meng-extends constructor 
-tempat parent class-nya. Kenapa begitu? karena ketika kita membuat constructor di child maka constructor di parent akan tertimpa, dan mau tidak mau kita harus 
+Super constructor ini digunakan untuk memanggil constructor yang ada pada parent class. Jadi seolah - olah `super()` ini meng-extends constructor 
+di parent class-nya. Kenapa begitu? karena ketika kita membuat constructor di child maka constructor di parent akan tertimpa, dan mau tidak mau kita harus 
 melakukan pemanggilan contructor parent-nya saat kita melakukan extends. Nah `super()` inilah yang akan memanggil contructor di parent-nya.
 ```
 class Admin extends User {
