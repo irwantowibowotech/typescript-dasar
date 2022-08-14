@@ -368,3 +368,30 @@ class Admin extends User {
 let admin = new Admin("Admin", "087847654321");
 console.log(admin.getIdentity());
 ```
+
+### Memahami Static Property dan Static Method
+Static property dan static method adalah property ataupun method yang bisa diakses langsung dari class tanpa harus membuat 
+object-nya terlebih dahulu.<br />
+Jika pada pembahasan sebelumnya kita sudah membuat property kemudian property tersebut kita masukkan ke constructor, maka di 
+static ini kita tidak perlu melakukan itu. Cukup buat property dengan visibility `static` kemudian langsung bisa kita akses 
+langsung dari class tersebut.
+```
+class People {
+    name: string;
+    address: string;
+    static isAlien: boolean = false;
+
+    constructor(name: string, address: string) {
+        this.name = name;
+        this.address = address;
+    }
+
+    static getHello(): string {
+        return "Hello peopla class!!";
+    }
+}
+
+let people = People.isAlien;
+console.log(people); // false
+console.log(People.getHello()); // Hello people class!!
+```
