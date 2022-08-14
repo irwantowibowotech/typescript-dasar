@@ -296,3 +296,42 @@ export class User {
 
 let user = new User("Irwanto");
 ```
+
+### Inheritance (Pewarisan)
+Konsep dari pewarisan class ini adalah sebuah class yang mempunyai sifat sifat dari class parent-nya (yang diturunkan).
+```
+export class User {
+    constructor(public name: string) {
+        this.name = name;
+    }
+
+    setName(value: string) {
+        this.name = value;
+    }
+
+    getName(): string {
+        return this.name;
+    }
+}
+```
+```
+class Admin extends User {
+    read: boolean = true;
+    write: boolean = true;
+
+    getRole(): {read: boolean, write: boolean} {
+        return {
+            read: this.read,
+            write: this.write,
+        }
+    }
+}
+
+let admin = new Admin("Admin");
+console.log(admin.getName()); // Admin
+console.log(admin.getRole()); // { read: true, write: true }
+admin.setName("Mantabb");
+console.log(admin.getName()); // Mantabb
+```
+Ketika class Admin meng-extends class User maka class Admin bisa memiliki method yang ada pada class User (`setName` dan `getName`) 
+dan bisa kita gunukan di class User.
