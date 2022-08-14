@@ -26,10 +26,11 @@ console.log(user.name);
  */
 // Inheritance
 class Admin extends User {
-    constructor() {
-        super(...arguments);
+    constructor(name, phone) {
+        super(name);
         this.read = true;
         this.write = true;
+        this.phone = phone;
     }
     getRole() {
         return {
@@ -37,9 +38,9 @@ class Admin extends User {
             write: this.write,
         };
     }
+    getIdentity() {
+        return `Nama : ${this.getName()}, Telp: ${this.phone}`;
+    }
 }
-let admin = new Admin("Admin");
-console.log(admin.getName()); // Admin
-console.log(admin.getRole()); // { read: true, write: true }
-admin.setName("Mantabb");
-console.log(admin.getName()); // Mantabb
+let admin = new Admin("Admin", "087847654321");
+console.log(admin.getIdentity());

@@ -335,3 +335,36 @@ console.log(admin.getName()); // Mantabb
 ```
 Ketika class Admin meng-extends class User maka class Admin bisa memiliki method yang ada pada class User (`setName` dan `getName`) 
 dan bisa kita gunukan di class User.
+
+### Super Constructor
+Ketika kita membuat sebuah class dan tentu kita akan membuat sebuah constructor yang akan kita panggil saat kita membuat object-nya.
+Namun saat kita melakukan extends dan kita ingin membuat constructor di class child, maka kita harus membuat super constructor.
+Super constructor ini digunakan untuk memanggil constructor yang ada pada parent class. Bisa saya andaikan kalau `super()` ini meng-extends constructor 
+tempat parent class-nya. Kenapa begitu? karena ketika kita membuat constructor di child maka constructor di parent akan tertimpa, dan mau tidak mau kita harus 
+melakukan pemanggilan contructor parent-nya saat kita melakukan extends. Nah `super()` inilah yang akan memanggil contructor di parent-nya.
+```
+class Admin extends User {
+    read: boolean = true;
+    write: boolean = true;
+    phone: string;
+
+    constructor(name: string, phone: string,) {
+        super(name);
+        this.phone = phone;
+    }
+
+    getRole(): {read: boolean, write: boolean} {
+        return {
+            read: this.read,
+            write: this.write,
+        }
+    }
+
+    getIdentity(): string {
+        return `Nama : ${this.getName()}, Telp: ${this.phone}`
+    }
+}
+
+let admin = new Admin("Admin", "087847654321");
+console.log(admin.getIdentity());
+```
