@@ -268,3 +268,31 @@ console.log(getUser("A")); // A undefined
 ```
 Yang perlu kita perhatikan adalah return type yang kita pakai ketika kita menggunakan opsioanl parameter ini. Ketika kita mereturn number maka 
 kita tidak bisa memakai opsional, karena kita tidak bisa menjumlahkan number dengan undefined.
+
+### Memahami Class (Dasar) Di Typescript
+Di Javascript sebenarnya tidak mengenal `class`, hanya ada `prototype`. Di Typescript sendiri kita bisa mengguanakn class karena memang typescript 
+ada untuk memecahkan masalah tersebut (yang ada di Javascript). Ujung - ujungnya hasil compile dari typescript adalah prototype.
+```
+export class User {
+    public name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+}
+
+let user = new User("Irwanto");
+console.log(user); // User { name: 'Irwanto' }
+console.log(user.name); // Irwanto
+```
+TIPS:
+Kita bisa menyingkat penulisan class kita saat kita menginisiasi properti dan constructor menjadi lebih sederhana di Typescript.
+```
+export class User {
+    constructor(public name: string) {
+        this.name = name;
+    }
+}
+
+let user = new User("Irwanto");
+```
