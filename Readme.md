@@ -414,4 +414,46 @@ abstract class Vehicle {
 class Car extends Vehicle {
     wheels: number = 4;
 }
+
+let car = new Car();
+console.log("Jml Roda Mobil ====>", car)
+car.start();
 ```
+
+### Memahami Interface
+Asumsikan kita memiliki sebuah laptop. Tentu saja di laptop akan ada namanya, ada tombol on untuk menyalakan serta tombol 
+off untuk mematikannya. Nantinya setiap laptop pasti memilki ketiga hal tersebut. <br />
+Pada kasus tersebut kita bisa buat sebuah `interface` Laptop yang menyimpan ketiga hal yang disebutkan tersebut.
+Saat ketiga hal tersebut dijadikan interface maka tidak akan memiliki nilai apapun (jika property, dan tidak mengembalikan nilai apapun jika itu method), 
+hanya didefinisikan saja.
+```
+interface Laptop {
+    name: string;
+    on(): void;
+    off(): void;
+}
+```
+Nantinya jika kita memiliki class dan meng-implement interface tersebut maka ketiga hal tersebut (name, method on dan off) harus ada, 
+jika satu saja tidak ada maka akn menyebabkan error.
+```
+class Asus implements Laptop {
+    name: string;
+    isGaming: boolean;
+
+    constructor(name: string, isGaming: boolean) {
+        this.name = name;
+        this.isGaming = isGaming;
+    }
+    on(): void {
+        console.log("Laptop menyala");
+    }
+    off(): void {
+        console.log("Laptop dimatikan")
+    }
+}
+
+let asus = new Asus("Asus ROG 17", true);
+asus.on();
+```
+Bisa kita lihat ketika kita melakukan implement terhadap suatu interface maka kita harus mengikuti apa apa saja yang ada di interface. 
+Jika salah satu dari properti / method interface tidak dipenuhi maka akan menyebabkan error.
