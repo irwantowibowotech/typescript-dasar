@@ -457,3 +457,32 @@ asus.on();
 ```
 Bisa kita lihat ketika kita melakukan implement terhadap suatu interface maka kita harus mengikuti apa apa saja yang ada di interface. 
 Jika salah satu dari properti / method interface tidak dipenuhi maka akan menyebabkan error.
+
+### Generic Type
+Generic type adalah sebuah tipe data yang dinamis.
+Kita mulai dengan contoh kasus, misal saya ada function yang memiliki parameter bertipe `any` (bisa apa saja). Kemuadian saya ingin mencetak 
+panjang dari (length) value tersebut.
+```
+function getData(value: any) {
+    return value;
+}
+
+console.log(getData("Irwanto").length); // 7
+console.log(getData(100).length); // undefined
+```
+Typescript tidak akan menemukan error, hanya saja nilainya akan menjadi `undefined` saat kita memberikan value bertipe number, karena memang 
+number tidak bisa kita beri `length`. <br /><br />
+Solusi yang bisa kita gunakan adalah `generic type`.
+```
+function myData<T>(value: T) {
+    return value;
+}
+```
+Ketika ada yang memaka function `myData` dan maka dia akan membaca tipe data dari value nya, <T> inilah yang berfungsi untuk mendeteksi tipe data 
+apa yang diberikan, lalu akan dikasih tau ke parameternya. Peremeternya sendiri bertipe `T` yang mana dia menerima tipe dara sama dengan `<T>` di `mydata`.
+Dengan langkah seperti ini maka ketika kita menggunakan method `length` di tipe data number akan error.
+```
+console.log(myData("Irwanto").length);
+console.log(myData(100).length); // errror
+```
+`T` di sini bebeas kita ganti apapun ya sebenarnya, mau `Aku`, `R` bisa - bisa saja. Namun umumnya para programmer menggunakan `T` untuk generic type.
