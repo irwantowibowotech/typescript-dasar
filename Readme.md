@@ -485,4 +485,11 @@ Dengan langkah seperti ini maka ketika kita menggunakan method `length` di tipe 
 console.log(myData("Irwanto").length);
 console.log(myData(100).length); // errror
 ```
-`T` di sini bebeas kita ganti apapun ya sebenarnya, mau `Aku`, `R` bisa - bisa saja. Namun umumnya para programmer menggunakan `T` untuk generic type.
+`T` di sini bebas kita ganti apapun ya sebenarnya, mau `Aku`, `R` bisa - bisa saja. Namun umumnya para programmer menggunakan `T` untuk generic type.
+
+### Studi Kasus
+- interface : `ILaptop`
+- abstract class : `BaseLaptop`
+- function : `Kayboard`
+- class : `Asus & Macbook`
+- class implementation : `Product`
